@@ -67,6 +67,8 @@ final class SignUpViewController: UIViewController {
         let authComplete = AuthCompleteViewController()
         authComplete.modalPresentationStyle = .fullScreen
         
+        authComplete.setData(string: emailTextField.text ?? "")
+        
         present(authComplete, animated: true) {
             self.navigationController?.popToRootViewController(animated: true)
         }

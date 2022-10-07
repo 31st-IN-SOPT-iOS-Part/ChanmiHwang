@@ -15,7 +15,7 @@ final class AuthCompleteViewController: UIViewController {
     
     // MARK: - UI Property
     
-    private let authCompleteLabel = UILabel().then {
+    private var authCompleteLabel = UILabel().then {
         $0.text = "님\n환영합니다"
         $0.numberOfLines = 0
         $0.addLineSpacing(spacing: 35)
@@ -47,6 +47,10 @@ final class AuthCompleteViewController: UIViewController {
     }
     
     // MARK: - Custom Method
+    
+    func setData(string: String) {
+        authCompleteLabel.text = string + "님\n 환영합니다"
+    }
     
     private func setBackgroundColor() {
         view.backgroundColor = .white

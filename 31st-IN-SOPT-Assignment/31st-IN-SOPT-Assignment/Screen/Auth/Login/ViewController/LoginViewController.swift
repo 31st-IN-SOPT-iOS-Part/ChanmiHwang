@@ -86,6 +86,8 @@ final class LoginViewController: UIViewController {
         let authCompleteVC = AuthCompleteViewController()
         authCompleteVC.modalPresentationStyle = .fullScreen
         
+        authCompleteVC.setData(string: emailTextField.text ?? "")
+        
         self.present(authCompleteVC, animated: true) {
             self.emailTextField.text = ""
             self.passwordTextField.text = ""
