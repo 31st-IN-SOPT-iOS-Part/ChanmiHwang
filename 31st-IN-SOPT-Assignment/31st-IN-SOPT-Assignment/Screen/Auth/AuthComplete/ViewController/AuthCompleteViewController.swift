@@ -5,4 +5,68 @@
 //  Created by 황찬미 on 2022/10/07.
 //
 
-import Foundation
+import UIKit
+
+final class AuthCompleteViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    var name: String?
+    
+    // MARK: - UI Property
+    
+    private let authCompleteLabel = UILabel().then {
+        $0.text = "님\n환영합니다"
+        $0.numberOfLines = 0
+        $0.addLineSpacing(spacing: 35)
+        $0.font = .systemFont(ofSize: 20, weight: .medium)
+        $0.textAlignment = .center
+        $0.textColor = .black
+    }
+    
+    private lazy var checkButton = KakaoButton().then {
+        $0.backgroundColor = .yellow
+        $0.isEnabled = true
+        $0.setTitle("확인", for: .normal)
+    }
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setBackgroundColor()
+        setLayout()
+    }
+    
+    // MARK: - @objc
+    
+    // MARK: - Custom Method
+    
+    private func setBackgroundColor() {
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+        setHierarchy()
+        setConstraint()
+    }
+    
+    private func setHierarchy() {
+        view.addSubviews([authCompleteLabel, checkButton])
+    }
+    
+    private func setConstraint() {
+        authCompleteLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(200)
+            $0.centerX.equalToSuperview()
+        }
+        
+        checkButton.snp.makeConstraints {
+            $0.top.equalTo(authCompleteLabel.snp.bottom).offset(150)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(50)
+        }
+    }
+
+}
