@@ -67,7 +67,9 @@ final class SignUpViewController: UIViewController {
         let authComplete = AuthCompleteViewController()
         authComplete.modalPresentationStyle = .fullScreen
         
-        present(authComplete, animated: true, completion: nil)
+        present(authComplete, animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     // MARK: - Custom Method

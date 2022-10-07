@@ -51,6 +51,7 @@ final class LoginViewController: UIViewController {
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
         $0.isEnabled = true
+        $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
     }
     
     private let findEmailLabel = UILabel().then {
@@ -76,6 +77,11 @@ final class LoginViewController: UIViewController {
     
     // MARK: - @objc
     
+    @objc private func pushSignUpVC() {
+        let signUpVC = SignUpViewController()
+        self.navigationController?.pushViewController(signUpVC, animated: true)
+    }
+    
     @objc private func presentAuthComplete() {
         let authCompleteVC = AuthCompleteViewController()
         authCompleteVC.modalPresentationStyle = .fullScreen
@@ -86,7 +92,6 @@ final class LoginViewController: UIViewController {
     @objc private func textFieldDidEndEditing() {
         if emailTextField.hasText && passwordTextField.hasText {
             loginButton.isEnabled = true
-            print("wkfehlsi")
         } else {
             loginButton.isEnabled = false
         }
@@ -127,7 +132,7 @@ final class LoginViewController: UIViewController {
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(50)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(50)
         }

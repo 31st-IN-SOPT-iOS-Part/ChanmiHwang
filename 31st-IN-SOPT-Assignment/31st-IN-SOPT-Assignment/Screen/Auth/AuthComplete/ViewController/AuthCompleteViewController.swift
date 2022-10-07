@@ -43,7 +43,7 @@ final class AuthCompleteViewController: UIViewController {
     // MARK: - @objc
     
     @objc private func dismissMain() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Custom Method
