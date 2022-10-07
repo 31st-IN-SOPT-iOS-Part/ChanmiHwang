@@ -45,10 +45,12 @@ final class LoginViewController: UIViewController {
     
     private lazy var loginButton = KakaoButton().then {
         $0.setTitle("카카오계정 로그인", for: .normal)
+        $0.addTarget(self, action: #selector(presentAuthComplete), for: .touchUpInside)
     }
     
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
+        $0.isEnabled = true
     }
     
     private let findEmailLabel = UILabel().then {
@@ -73,6 +75,13 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - @objc
+    
+    @objc private func presentAuthComplete() {
+        let authCompleteVC = AuthCompleteViewController()
+        authCompleteVC.modalPresentationStyle = .fullScreen
+        
+        self.present(authCompleteVC, animated: true, completion: nil)
+    }
     
     @objc private func textFieldDidEndEditing() {
         if emailTextField.hasText && passwordTextField.hasText {
