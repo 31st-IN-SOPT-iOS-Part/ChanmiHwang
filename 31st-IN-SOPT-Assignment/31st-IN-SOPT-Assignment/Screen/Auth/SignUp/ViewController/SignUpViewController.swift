@@ -50,6 +50,7 @@ final class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         setBackgroundColor()
+        setNavigationbarHideen()
         setLayout()
     }
     
@@ -78,6 +79,10 @@ final class SignUpViewController: UIViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func setNavigationbarHideen() {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func setLayout() {
