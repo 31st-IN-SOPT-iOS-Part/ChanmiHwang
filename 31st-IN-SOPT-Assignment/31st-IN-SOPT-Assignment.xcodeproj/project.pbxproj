@@ -27,6 +27,8 @@
 		4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859C28EFFAE100AB688F /* SignUpViewController.swift */; };
 		4A43859F28EFFAE500AB688F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859E28EFFAE500AB688F /* LoginView.swift */; };
 		4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A128EFFAF200AB688F /* LoginViewController.swift */; };
+		4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A528F01FBB00AB688F /* KakaoButton.swift */; };
+		4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A628F01FBB00AB688F /* KakaoTextField.swift */; };
 		DEA5823CAA7A9354CD921C36 /* Pods_31st_IN_SOPT_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		4A43859C28EFFAE100AB688F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4A43859E28EFFAE500AB688F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4A4385A128EFFAF200AB688F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A4385A528F01FBB00AB688F /* KakaoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoButton.swift; sourceTree = "<group>"; };
+		4A4385A628F01FBB00AB688F /* KakaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoTextField.swift; sourceTree = "<group>"; };
 		71D5302BCD393307F710E2C2 /* Pods-31st-IN-SOPT-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		A0FAF350974E17B745B4CDFD /* Pods-31st-IN-SOPT-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.release.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_31st_IN_SOPT_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				4A43858928EFFA8200AB688F /* DesignSystem.swift */,
+				4A4385A528F01FBB00AB688F /* KakaoButton.swift */,
+				4A4385A628F01FBB00AB688F /* KakaoTextField.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -453,9 +459,11 @@
 				4A43858828EFFA7900AB688F /* Constant.swift in Sources */,
 				4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */,
 				4A43858C28EFFA8900AB688F /* Extension.swift in Sources */,
+				4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */,
 				4A43855E28EFF85700AB688F /* ViewController.swift in Sources */,
 				4A43855A28EFF85700AB688F /* AppDelegate.swift in Sources */,
 				4A43858A28EFFA8200AB688F /* DesignSystem.swift in Sources */,
+				4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */,
 				4A43857928EFFA3300AB688F /* API.swift in Sources */,
 				4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */,
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,
@@ -615,6 +623,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "31st-IN-SOPT-Assignment/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,6 +650,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "31st-IN-SOPT-Assignment/Resource/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
