@@ -13,6 +13,7 @@
 		4A43856128EFF85700AB688F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A43855F28EFF85700AB688F /* Main.storyboard */; };
 		4A43856328EFF85A00AB688F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A43856228EFF85A00AB688F /* Assets.xcassets */; };
 		4A43856628EFF85A00AB688F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A43856428EFF85A00AB688F /* LaunchScreen.storyboard */; };
+		DEA5823CAA7A9354CD921C36 /* Pods_31st_IN_SOPT_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		4A43856228EFF85A00AB688F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A43856528EFF85A00AB688F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A43856728EFF85A00AB688F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71D5302BCD393307F710E2C2 /* Pods-31st-IN-SOPT-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		A0FAF350974E17B745B4CDFD /* Pods-31st-IN-SOPT-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.release.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_31st_IN_SOPT_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA5823CAA7A9354CD921C36 /* Pods_31st_IN_SOPT_Assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				4A43855828EFF85700AB688F /* 31st-IN-SOPT-Assignment */,
 				4A43855728EFF85700AB688F /* Products */,
+				77EE91302867DEC1BD89BB8D /* Pods */,
+				7B07A1FDF64DA7E3061ACF46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "31st-IN-SOPT-Assignment";
 			sourceTree = "<group>";
 		};
+		77EE91302867DEC1BD89BB8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71D5302BCD393307F710E2C2 /* Pods-31st-IN-SOPT-Assignment.debug.xcconfig */,
+				A0FAF350974E17B745B4CDFD /* Pods-31st-IN-SOPT-Assignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7B07A1FDF64DA7E3061ACF46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A43856A28EFF85A00AB688F /* Build configuration list for PBXNativeTarget "31st-IN-SOPT-Assignment" */;
 			buildPhases = (
+				DA5DDED12DE2C29618A9C884 /* [CP] Check Pods Manifest.lock */,
 				4A43855228EFF85700AB688F /* Sources */,
 				4A43855328EFF85700AB688F /* Frameworks */,
 				4A43855428EFF85700AB688F /* Resources */,
+				B5B11DDAC3485188B768471D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5B11DDAC3485188B768471D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5DDED12DE2C29618A9C884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-31st-IN-SOPT-Assignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A43855228EFF85700AB688F /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		4A43856B28EFF85A00AB688F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D5302BCD393307F710E2C2 /* Pods-31st-IN-SOPT-Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -307,6 +377,7 @@
 		};
 		4A43856C28EFF85A00AB688F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0FAF350974E17B745B4CDFD /* Pods-31st-IN-SOPT-Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
