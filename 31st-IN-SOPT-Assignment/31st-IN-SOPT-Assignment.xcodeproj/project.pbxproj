@@ -17,18 +17,14 @@
 		4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857A28EFFA3A00AB688F /* DataModel.swift */; };
 		4A43857D28EFFA3E00AB688F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857C28EFFA3E00AB688F /* Service.swift */; };
 		4A43857F28EFFA4400AB688F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857E28EFFA4400AB688F /* Utility.swift */; };
-		4A43858628EFFA7600AB688F /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858528EFFA7600AB688F /* Base.swift */; };
 		4A43858828EFFA7900AB688F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858728EFFA7900AB688F /* Constant.swift */; };
-		4A43858A28EFFA8200AB688F /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858928EFFA8200AB688F /* DesignSystem.swift */; };
-		4A43858C28EFFA8900AB688F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858B28EFFA8900AB688F /* Extension.swift */; };
-		4A43859728EFFAC800AB688F /* AuthCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859628EFFAC800AB688F /* AuthCompleteView.swift */; };
+		4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858B28EFFA8900AB688F /* UIView+.swift */; };
 		4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */; };
-		4A43859B28EFFAD800AB688F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859A28EFFAD800AB688F /* SignUpView.swift */; };
 		4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859C28EFFAE100AB688F /* SignUpViewController.swift */; };
-		4A43859F28EFFAE500AB688F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859E28EFFAE500AB688F /* LoginView.swift */; };
 		4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A128EFFAF200AB688F /* LoginViewController.swift */; };
 		4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A528F01FBB00AB688F /* KakaoButton.swift */; };
 		4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A628F01FBB00AB688F /* KakaoTextField.swift */; };
+		4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385B128F04E3600AB688F /* UILabel+.swift */; };
 		DEA5823CAA7A9354CD921C36 /* Pods_31st_IN_SOPT_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,18 +41,14 @@
 		4A43857A28EFFA3A00AB688F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4A43857C28EFFA3E00AB688F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		4A43857E28EFFA4400AB688F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		4A43858528EFFA7600AB688F /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		4A43858728EFFA7900AB688F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		4A43858928EFFA8200AB688F /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
-		4A43858B28EFFA8900AB688F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		4A43859628EFFAC800AB688F /* AuthCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCompleteView.swift; sourceTree = "<group>"; };
+		4A43858B28EFFA8900AB688F /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCompleteViewController.swift; sourceTree = "<group>"; };
-		4A43859A28EFFAD800AB688F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4A43859C28EFFAE100AB688F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		4A43859E28EFFAE500AB688F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4A4385A128EFFAF200AB688F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A4385A528F01FBB00AB688F /* KakaoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoButton.swift; sourceTree = "<group>"; };
 		4A4385A628F01FBB00AB688F /* KakaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoTextField.swift; sourceTree = "<group>"; };
+		4A4385B128F04E3600AB688F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		71D5302BCD393307F710E2C2 /* Pods-31st-IN-SOPT-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		A0FAF350974E17B745B4CDFD /* Pods-31st-IN-SOPT-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-31st-IN-SOPT-Assignment.release.xcconfig"; path = "Target Support Files/Pods-31st-IN-SOPT-Assignment/Pods-31st-IN-SOPT-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		BF1DADB3B3170408B9693BBE /* Pods_31st_IN_SOPT_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_31st_IN_SOPT_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,9 +144,9 @@
 		4A43857228EFFA1000AB688F /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4A43858D28EFFA9400AB688F /* Login */,
-				4A43858E28EFFA9900AB688F /* SignUp */,
-				4A43858F28EFFA9B00AB688F /* AuthComplete */,
+				4A4385A128EFFAF200AB688F /* LoginViewController.swift */,
+				4A43859C28EFFAE100AB688F /* SignUpViewController.swift */,
+				4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -205,7 +197,6 @@
 		4A43858028EFFA5000AB688F /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				4A43858128EFFA5900AB688F /* Base */,
 				4A43858428EFFA6800AB688F /* Constant */,
 				4A43858228EFFA5D00AB688F /* DesignSystem */,
 				4A43858328EFFA6500AB688F /* Extension */,
@@ -213,18 +204,9 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		4A43858128EFFA5900AB688F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				4A43858528EFFA7600AB688F /* Base.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		4A43858228EFFA5D00AB688F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				4A43858928EFFA8200AB688F /* DesignSystem.swift */,
 				4A4385A528F01FBB00AB688F /* KakaoButton.swift */,
 				4A4385A628F01FBB00AB688F /* KakaoTextField.swift */,
 			);
@@ -234,7 +216,8 @@
 		4A43858328EFFA6500AB688F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4A43858B28EFFA8900AB688F /* Extension.swift */,
+				4A43858B28EFFA8900AB688F /* UIView+.swift */,
+				4A4385B128F04E3600AB688F /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -245,81 +228,6 @@
 				4A43858728EFFA7900AB688F /* Constant.swift */,
 			);
 			path = Constant;
-			sourceTree = "<group>";
-		};
-		4A43858D28EFFA9400AB688F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859128EFFAA800AB688F /* View */,
-				4A43859028EFFAA400AB688F /* ViewController */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		4A43858E28EFFA9900AB688F /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859228EFFAA900AB688F /* View */,
-				4A43859328EFFAAC00AB688F /* ViewController */,
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		4A43858F28EFFA9B00AB688F /* AuthComplete */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859428EFFAB100AB688F /* View */,
-				4A43859528EFFAB400AB688F /* ViewController */,
-			);
-			path = AuthComplete;
-			sourceTree = "<group>";
-		};
-		4A43859028EFFAA400AB688F /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4A4385A128EFFAF200AB688F /* LoginViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4A43859128EFFAA800AB688F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859E28EFFAE500AB688F /* LoginView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4A43859228EFFAA900AB688F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859A28EFFAD800AB688F /* SignUpView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4A43859328EFFAAC00AB688F /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859C28EFFAE100AB688F /* SignUpViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4A43859428EFFAB100AB688F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859628EFFAC800AB688F /* AuthCompleteView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4A43859528EFFAB400AB688F /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		77EE91302867DEC1BD89BB8D /* Pods */ = {
@@ -454,25 +362,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A43858628EFFA7600AB688F /* Base.swift in Sources */,
 				4A43857F28EFFA4400AB688F /* Utility.swift in Sources */,
 				4A43858828EFFA7900AB688F /* Constant.swift in Sources */,
 				4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */,
-				4A43858C28EFFA8900AB688F /* Extension.swift in Sources */,
+				4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */,
 				4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */,
+				4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */,
 				4A43855E28EFF85700AB688F /* ViewController.swift in Sources */,
 				4A43855A28EFF85700AB688F /* AppDelegate.swift in Sources */,
-				4A43858A28EFFA8200AB688F /* DesignSystem.swift in Sources */,
 				4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */,
 				4A43857928EFFA3300AB688F /* API.swift in Sources */,
 				4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */,
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,
-				4A43859B28EFFAD800AB688F /* SignUpView.swift in Sources */,
 				4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */,
 				4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */,
 				4A43857D28EFFA3E00AB688F /* Service.swift in Sources */,
-				4A43859F28EFFAE500AB688F /* LoginView.swift in Sources */,
-				4A43859728EFFAC800AB688F /* AuthCompleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

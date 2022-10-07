@@ -9,11 +9,8 @@ import UIKit
 
 import SnapKit
 import Then
-import SwiftUI
 
 final class SignUpViewController: UIViewController {
-    
-    // MARK: - Property
     
     // MARK: - UI Property
     
@@ -127,9 +124,3 @@ final class SignUpViewController: UIViewController {
         }
     }
 }
-
-    
-    // MARK: - @objc
-    
-    // MARK: - Custom Method
-

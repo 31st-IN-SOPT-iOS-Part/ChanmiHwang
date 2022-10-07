@@ -69,12 +69,6 @@ final class LoginViewController: UIViewController {
         setLayout()
     }
     
-    // MARK: - Custom Method
-    
-    private func setBackgroundColor() {
-        view.backgroundColor = .white
-    }
-    
     // MARK: - @objc
     
     @objc private func pushSignUpVC() {
@@ -100,6 +94,12 @@ final class LoginViewController: UIViewController {
         } else {
             loginButton.isEnabled = false
         }
+    }
+    
+    // MARK: - Custom Method
+    
+    private func setBackgroundColor() {
+        view.backgroundColor = .white
     }
     
     private func setLayout() {
