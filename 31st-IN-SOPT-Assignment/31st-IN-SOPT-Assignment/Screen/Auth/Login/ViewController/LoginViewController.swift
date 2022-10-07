@@ -34,11 +34,13 @@ final class LoginViewController: UIViewController {
     
     private lazy var emailTextField = KakaoTextField().then {
         $0.placeholder = "이메일 또는 전화번호"
+        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var passwordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
+        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var loginButton = KakaoButton().then {
@@ -68,6 +70,17 @@ final class LoginViewController: UIViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    // MARK: - @objc
+    
+    @objc private func textFieldDidEndEditing() {
+        if emailTextField.hasText && passwordTextField.hasText {
+            loginButton.isEnabled = true
+            print("wkfehlsi")
+        } else {
+            loginButton.isEnabled = false
+        }
     }
     
     private func setLayout() {
