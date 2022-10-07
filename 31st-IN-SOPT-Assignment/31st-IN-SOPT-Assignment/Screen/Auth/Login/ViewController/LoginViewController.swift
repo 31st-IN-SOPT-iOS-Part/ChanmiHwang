@@ -86,7 +86,10 @@ final class LoginViewController: UIViewController {
         let authCompleteVC = AuthCompleteViewController()
         authCompleteVC.modalPresentationStyle = .fullScreen
         
-        self.present(authCompleteVC, animated: true, completion: nil)
+        self.present(authCompleteVC, animated: true) {
+            self.emailTextField.text = ""
+            self.passwordTextField.text = ""
+        }
     }
     
     @objc private func textFieldDidEndEditing() {
