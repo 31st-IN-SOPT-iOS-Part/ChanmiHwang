@@ -25,7 +25,7 @@ final class KakaoButton: UIButton {
         self.backgroundColor = .systemGray6
         self.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
         self.layer.cornerRadius = 4
-        self.isEnabled = false
+        self.isUserInteractionEnabled = false
         self.setTitleColor(.black, for: .normal)
     }
 }

@@ -26,7 +26,7 @@ final class AuthCompleteViewController: UIViewController {
     
     private lazy var checkButton = KakaoButton().then {
         $0.backgroundColor = .yellow
-        $0.isEnabled = true
+        $0.isUserInteractionEnabled = true
         $0.setTitle("확인", for: .normal)
         $0.addTarget(self, action: #selector(dismissMain), for: .touchUpInside)
     }

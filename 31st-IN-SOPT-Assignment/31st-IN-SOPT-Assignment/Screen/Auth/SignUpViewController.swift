@@ -55,9 +55,9 @@ final class SignUpViewController: UIViewController {
     
     @objc private func textFieldDidCheckPassword() {
         if passwordTextField.text == checkpasswordTextField.text {
-            createButton.isEnabled = true
+            createButton.isUserInteractionEnabled = true
         } else {
-            createButton.isEnabled = false
+            createButton.isUserInteractionEnabled = false
         }
     }
     

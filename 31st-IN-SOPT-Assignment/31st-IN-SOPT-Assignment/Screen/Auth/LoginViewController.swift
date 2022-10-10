@@ -50,7 +50,7 @@ final class LoginViewController: UIViewController {
     
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
-        $0.isEnabled = true
+        $0.isUserInteractionEnabled = true
         $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
     }
     
@@ -90,9 +90,9 @@ final class LoginViewController: UIViewController {
     
     @objc private func textFieldDidEndEditing() {
         if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.isEnabled = true
+            loginButton.isUserInteractionEnabled = true
         } else {
-            loginButton.isEnabled = false
+            loginButton.isUserInteractionEnabled = false
         }
     }
     
