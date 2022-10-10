@@ -13,8 +13,10 @@ import SnapKit
 final class KakaoTextField: UITextField {
     
     private var bottomView = UIView().then {
-        $0.backgroundColor = .systemGray6
+        $0.backgroundColor = .systemGray5
     }
+    
+    // MARK: - initialiaztion
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,11 +31,13 @@ final class KakaoTextField: UITextField {
     
     private func setDefaultStyle() {
         self.textColor = .black
-        self.font = .systemFont(ofSize: 14, weight: .medium)
+        self.font = .systemFont(ofSize: 17, weight: .medium)
         self.clearButtonMode = .whileEditing
     }
     
     private func setConstraints() {
+        addSubview(bottomView)
+        
         bottomView.snp.makeConstraints {
             $0.top.equalTo(self.snp.bottom)
             $0.leading.trailing.equalToSuperview()

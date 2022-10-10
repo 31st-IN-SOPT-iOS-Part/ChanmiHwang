@@ -9,7 +9,7 @@ import UIKit
 
 final class KakaoButton: UIButton {
     
-    // MARK: Initialize
+    // MARK: initialiaztion
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,12 +21,11 @@ final class KakaoButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Default Style
     private func setDefaultStyle() {
         self.backgroundColor = .systemGray6
-        self.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        self.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
         self.layer.cornerRadius = 4
-        self.isEnabled = false
+        self.isUserInteractionEnabled = false
         self.setTitleColor(.black, for: .normal)
     }
 }
