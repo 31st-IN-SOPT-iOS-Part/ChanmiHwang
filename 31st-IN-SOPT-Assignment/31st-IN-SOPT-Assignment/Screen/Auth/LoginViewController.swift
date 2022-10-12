@@ -69,6 +69,10 @@ final class LoginViewController: UIViewController {
         setLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        resetTextField()
+    }
+    
     // MARK: - @objc
     
     @objc private func pushSignUpVC() {
@@ -81,11 +85,7 @@ final class LoginViewController: UIViewController {
         authCompleteVC.modalPresentationStyle = .fullScreen
         
         authCompleteVC.setData(string: emailTextField.text ?? "")
-        
-        self.present(authCompleteVC, animated: true) {
-            self.emailTextField.text = ""
-            self.passwordTextField.text = ""
-        }
+        self.present(authCompleteVC, animated: true)
     }
     
     @objc private func textFieldDidEndEditing() {
@@ -100,6 +100,11 @@ final class LoginViewController: UIViewController {
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func resetTextField() {
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
     
     private func setLayout() {
