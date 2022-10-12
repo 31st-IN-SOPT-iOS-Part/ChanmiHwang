@@ -17,8 +17,8 @@ final class LoginViewController: UIViewController {
     
     private let startKakaoLabel = UILabel().then {
         $0.text = "카카오톡을 시작합니다"
-        $0.font = .systemFont(ofSize: 20, weight: .medium)
         $0.textColor = .black
+        $0.font = .systemFont(ofSize: 22, weight: .medium)
     }
     
     private let explanationLabel = UILabel().then {
@@ -27,9 +27,9 @@ final class LoginViewController: UIViewController {
                   이메일 또는 전화번호로 로그인해 주세요.
                   """
         $0.numberOfLines = 0
-        $0.font = .systemFont(ofSize: 15, weight: .medium)
         $0.textColor = .gray
         $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 15, weight: .regular)
     }
     
     private lazy var emailTextField = KakaoTextField().then {
@@ -56,8 +56,8 @@ final class LoginViewController: UIViewController {
     
     private let findEmailLabel = UILabel().then {
         $0.text = "카카오계정 또는 비밀번호 찾기"
-        $0.font = .systemFont(ofSize: 15, weight: .medium)
         $0.textColor = .black
+        $0.font = .systemFont(ofSize: 13, weight: .medium)
     }
     
     // MARK: - Life Cycle
@@ -114,7 +114,7 @@ final class LoginViewController: UIViewController {
     
     private func setConstraint() {
         startKakaoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
             $0.centerX.equalToSuperview()
         }
         
@@ -124,32 +124,32 @@ final class LoginViewController: UIViewController {
         }
         
         emailTextField.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(explanationLabel.snp.bottom).offset(60)
             $0.centerX.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(explanationLabel.snp.bottom).offset(70)
-            $0.height.equalTo(50)
+            $0.height.equalTo(49)
         }
         
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
+            $0.height.equalTo(49)
         }
         
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(35)
+            $0.height.equalTo(44)
         }
         
         createButton.snp.makeConstraints {
-            $0.top.equalTo(loginButton.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.height.equalTo(44)
         }
         
         findEmailLabel.snp.makeConstraints {
-            $0.top.equalTo(createButton.snp.bottom).offset(20)
+            $0.top.equalTo(createButton.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
         }
     }

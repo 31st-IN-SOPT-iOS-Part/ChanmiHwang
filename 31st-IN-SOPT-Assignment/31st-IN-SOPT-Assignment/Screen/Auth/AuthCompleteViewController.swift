@@ -16,12 +16,11 @@ final class AuthCompleteViewController: UIViewController {
     // MARK: - UI Property
     
     private var authCompleteLabel = UILabel().then {
-        $0.text = "님\n환영합니다"
+        $0.text = "님 \n환영합니다"
         $0.numberOfLines = 0
-        $0.addLineSpacing(spacing: 35)
-        $0.font = .systemFont(ofSize: 20, weight: .medium)
-        $0.textAlignment = .center
         $0.textColor = .black
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.addLineSpacing(spacing: 30)
     }
     
     private lazy var checkButton = KakaoButton().then {
@@ -38,6 +37,7 @@ final class AuthCompleteViewController: UIViewController {
         
         setBackgroundColor()
         setLayout()
+        setTextAlignment()
     }
     
     // MARK: - @objc
@@ -49,11 +49,15 @@ final class AuthCompleteViewController: UIViewController {
     // MARK: - Custom Method
     
     func setData(string: String) {
-        authCompleteLabel.text = string + "님\n 환영합니다"
+        authCompleteLabel.text = string + "님 \n환영합니다"
     }
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
+    }
+    
+    private func setTextAlignment() {
+        authCompleteLabel.textAlignment = .center
     }
     
     private func setLayout() {
@@ -67,13 +71,13 @@ final class AuthCompleteViewController: UIViewController {
     
     private func setConstraint() {
         authCompleteLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(200)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(197)
             $0.centerX.equalToSuperview()
         }
         
         checkButton.snp.makeConstraints {
-            $0.top.equalTo(authCompleteLabel.snp.bottom).offset(150)
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(authCompleteLabel.snp.bottom).offset(117)
             $0.height.equalTo(50)
         }
     }

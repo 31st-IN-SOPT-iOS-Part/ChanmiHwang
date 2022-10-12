@@ -16,8 +16,8 @@ final class SignUpViewController: UIViewController {
     
     private let startKakaoLabel = UILabel().then {
         $0.text = "카카오톡을 시작합니다"
-        $0.font = .systemFont(ofSize: 20, weight: .medium)
         $0.textColor = .black
+        $0.font = .systemFont(ofSize: 22, weight: .medium)
     }
     
     private lazy var emailTextField = KakaoTextField().then {
@@ -32,8 +32,8 @@ final class SignUpViewController: UIViewController {
     
     private lazy var checkpasswordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호 확인"
-        $0.addTarget(self, action: #selector(textFieldDidCheckPassword), for: .editingChanged)
         $0.isSecureTextEntry = true
+        $0.addTarget(self, action: #selector(textFieldDidCheckPassword), for: .editingChanged)
     }
     
     private lazy var createButton = KakaoButton().then {
@@ -94,33 +94,33 @@ final class SignUpViewController: UIViewController {
     
     private func setConstraint() {
         startKakaoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
             $0.centerX.equalToSuperview()
         }
         
         emailTextField.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(startKakaoLabel.snp.bottom).offset(116)
             $0.centerX.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.equalTo(startKakaoLabel.snp.bottom).offset(125)
-            $0.height.equalTo(50)
+            $0.height.equalTo(49)
         }
         
         passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
+            $0.height.equalTo(49)
         }
         
         checkpasswordTextField.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(10)
+            $0.height.equalTo(49)
         }
         
         createButton.snp.makeConstraints {
-            $0.top.equalTo(checkpasswordTextField.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.top.equalTo(checkpasswordTextField.snp.bottom).offset(26)
+            $0.height.equalTo(44)
         }
     }
 }
