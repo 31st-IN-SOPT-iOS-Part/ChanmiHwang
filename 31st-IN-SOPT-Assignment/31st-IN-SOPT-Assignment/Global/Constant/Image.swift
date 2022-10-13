@@ -19,7 +19,7 @@ extension Constant {
         // MARK: - ProfileDetail
         // ic
         static let icBack = UIImage(named: "icBack")!
-        static let icProfileChat = UIImage(named: "icBack")!
+        static let icProfileChat = UIImage(named: "icProfileChat")!
         static let icProfileEdit = UIImage(named: "icProfileEdit")!
         static let icKakaoStory = UIImage(named: "icKakaoStory")!
     }
