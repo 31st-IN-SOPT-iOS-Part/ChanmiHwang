@@ -21,12 +21,13 @@ final class MainViewController: UIViewController {
         $0.font = .systemFont(ofSize: 22, weight: .semibold)
     }
     
-    private let settingBtn = UIButton().then {
+    private let settingButton = UIButton().then {
         $0.setImage(Constant.Image.icSetting, for: .normal)
     }
     
-    private lazy var profileBtn = UIButton().then {
+    private lazy var profileButton = UIButton().then {
         $0.setImage(Constant.Image.profileImg, for: .normal)
+        $0.addTarget(self, action: #selector(presentProfileDetailView), for: .touchUpInside)
     }
     
     
@@ -41,6 +42,12 @@ final class MainViewController: UIViewController {
     
     // MARK: - @objc
     
+    @objc private func presentProfileDetailView() {
+        let profileDetailViewController = ProfileDetailViewController()
+        profileDetailViewController.modalPresentationStyle = .fullScreen
+        self.present(profileDetailViewController, animated: true)
+    }
+    
     // MARK: - Custom Method
     
     private func setBackgrountColor() {
@@ -53,8 +60,8 @@ final class MainViewController: UIViewController {
     }
     
     private func setHierarchy() {
-        view.addSubviews([topView, profileBtn])
-        topView.addSubviews([kakaoMainLabel, settingBtn])
+        view.addSubviews([topView, profileButton])
+        topView.addSubviews([kakaoMainLabel, settingButton])
     }
     
     private func setConstraint() {
@@ -69,12 +76,12 @@ final class MainViewController: UIViewController {
             $0.centerY.equalToSuperview()
         }
         
-        settingBtn.snp.makeConstraints {
+        settingButton.snp.makeConstraints {
             $0.leading.equalTo(kakaoMainLabel.snp.trailing).offset(4)
             $0.centerY.equalToSuperview()
         }
         
-        profileBtn.snp.makeConstraints {
+        profileButton.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(14)
             $0.top.equalTo(topView.snp.bottom).offset(15)
         }
