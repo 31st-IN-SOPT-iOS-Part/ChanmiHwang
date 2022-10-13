@@ -27,7 +27,7 @@ final class AuthCompleteViewController: UIViewController {
         $0.backgroundColor = .kakaoYellow
         $0.isUserInteractionEnabled = true
         $0.setTitle("확인", for: .normal)
-        $0.addTarget(self, action: #selector(dismissMain), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(presentMainView), for: .touchUpInside)
     }
     
     // MARK: - Life Cycle
@@ -42,8 +42,8 @@ final class AuthCompleteViewController: UIViewController {
     
     // MARK: - @objc
     
-    @objc private func dismissMain() {
-        dismiss(animated: true, completion: nil)
+    @objc private func presentMainView() {
+        changeMainViewController()
     }
     
     // MARK: - Custom Method

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A20CD6128F7D92A00947272 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20CD6028F7D92A00947272 /* UIViewController+.swift */; };
 		4A43855A28EFF85700AB688F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43855928EFF85700AB688F /* AppDelegate.swift */; };
 		4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43855B28EFF85700AB688F /* SceneDelegate.swift */; };
 		4A43855E28EFF85700AB688F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43855D28EFF85700AB688F /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A20CD6028F7D92A00947272 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		4A43855628EFF85700AB688F /* 31st-IN-SOPT-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "31st-IN-SOPT-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A43855928EFF85700AB688F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A43855B28EFF85700AB688F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				4A43858B28EFFA8900AB688F /* UIView+.swift */,
 				4A4385B128F04E3600AB688F /* UILabel+.swift */,
 				4AB6E48728F7A6620017BA04 /* UIColor+.swift */,
+				4A20CD6028F7D92A00947272 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,
 				4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */,
 				4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */,
+				4A20CD6128F7D92A00947272 /* UIViewController+.swift in Sources */,
 				4A43857D28EFFA3E00AB688F /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
