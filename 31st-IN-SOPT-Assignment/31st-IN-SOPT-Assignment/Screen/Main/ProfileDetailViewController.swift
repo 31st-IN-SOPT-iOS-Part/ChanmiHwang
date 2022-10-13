@@ -21,11 +21,12 @@ final class ProfileDetailViewController: UIViewController {
     
     private let profileNameLabel = UILabel().then {
         $0.text = "황찬미"
+        $0.textColor = .white
         $0.font = .systemFont(ofSize: 18, weight: .regular)
     }
     
     private let divisionLine = UIView().then {
-        $0.backgroundColor = .systemGray5
+        $0.backgroundColor = .divisionGray
     }
     
     private let chatImg = UIImageView().then {
@@ -181,6 +182,23 @@ final class ProfileDetailViewController: UIViewController {
         
         storyStackView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
+        }
+        
+        divisionLine.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(editContainerView.snp.top).offset(-11)
+            $0.height.equalTo(1)
+        }
+        
+        profileNameLabel.snp.makeConstraints {
+            $0.bottom.equalTo(divisionLine.snp.top).offset(-42)
+            $0.centerX.equalToSuperview()
+        }
+        
+        profileImg.snp.makeConstraints {
+            $0.bottom.equalTo(profileNameLabel.snp.top).offset(-8)
+            $0.width.height.equalTo(97)
+            $0.centerX.equalToSuperview()
         }
     }
 }
