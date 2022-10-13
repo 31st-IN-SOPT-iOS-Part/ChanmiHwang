@@ -11,8 +11,9 @@ final class ProfileDetailViewController: UIViewController {
     
     // MARK: - UI Property
     
-    private let backButton = UIButton().then {
+    private lazy var backButton = UIButton().then {
         $0.setImage(Constant.Image.icBack, for: .normal)
+        $0.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
     }
     
     private let profileImg = UIImageView().then {
@@ -92,6 +93,10 @@ final class ProfileDetailViewController: UIViewController {
     }
     
     // MARK: - @objc
+    
+    @objc private func backButtonDidTap() {
+        dismiss(animated: true)
+    }
     
     @objc private func chatContainerViewDidTap() {
         print("chat 눌림")
