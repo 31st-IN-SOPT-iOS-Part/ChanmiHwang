@@ -89,7 +89,7 @@ final class ProfileDetailViewController: UIViewController {
         
         setBackgroundColor()
         setLayout()
-        setGesture()
+        addViewTapGesture()
     }
     
     // MARK: - @objc
@@ -116,7 +116,7 @@ final class ProfileDetailViewController: UIViewController {
         view.backgroundColor = .backgroundGray
     }
     
-    private func setGesture() {
+    private func addViewTapGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(chatContainerViewDidTap))
         chatContainerView.addGestureRecognizer(gesture)
         let editGesture = UITapGestureRecognizer(target: self, action: #selector(editContainerViewDidTap))
