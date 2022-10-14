@@ -30,7 +30,6 @@ final class MainViewController: UIViewController {
         $0.addTarget(self, action: #selector(presentProfileDetailView), for: .touchUpInside)
     }
     
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {

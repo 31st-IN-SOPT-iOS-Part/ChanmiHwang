@@ -181,7 +181,7 @@ final class ProfileDetailViewController: UIViewController {
         storyContainerView.snp.makeConstraints {
             $0.leading.equalTo(editContainerView.snp.trailing)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(44)
-            $0.width.equalTo(convertByWidthRatio(92)).multipliedBy(2)
+            $0.width.equalTo(convertByWidthRatio(92))
             $0.height.equalTo(72)
         }
         
