@@ -25,6 +25,7 @@
 		4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A528F01FBB00AB688F /* KakaoButton.swift */; };
 		4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A628F01FBB00AB688F /* KakaoTextField.swift */; };
 		4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385B128F04E3600AB688F /* UILabel+.swift */; };
+		4A709B20291285EF00105234 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B1F291285EF00105234 /* ViewModel.swift */; };
 		4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48728F7A6620017BA04 /* UIColor+.swift */; };
 		4AB6E48B28F7A89F0017BA04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */; };
 		4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48C28F7AA7D0017BA04 /* Image.swift */; };
@@ -54,6 +55,7 @@
 		4A4385A528F01FBB00AB688F /* KakaoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoButton.swift; sourceTree = "<group>"; };
 		4A4385A628F01FBB00AB688F /* KakaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoTextField.swift; sourceTree = "<group>"; };
 		4A4385B128F04E3600AB688F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		4A709B1F291285EF00105234 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4AB6E48728F7A6620017BA04 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4AB6E48C28F7AA7D0017BA04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		4A43858028EFFA5000AB688F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				4A709B1E291285E600105234 /* Protocol */,
 				4A43858428EFFA6800AB688F /* Constant */,
 				4A43858228EFFA5D00AB688F /* DesignSystem */,
 				4A43858328EFFA6500AB688F /* Extension */,
@@ -240,6 +243,14 @@
 				4AB6E48C28F7AA7D0017BA04 /* Image.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		4A709B1E291285E600105234 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4A709B1F291285EF00105234 /* ViewModel.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		4AB6E48928F7A88E0017BA04 /* Main */ = {
@@ -422,6 +433,7 @@
 				4A43855A28EFF85700AB688F /* AppDelegate.swift in Sources */,
 				4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */,
 				4AF80C3A291165D900B084CA /* SignUpViewModel.swift in Sources */,
+				4A709B20291285EF00105234 /* ViewModel.swift in Sources */,
 				4A43857928EFFA3300AB688F /* API.swift in Sources */,
 				4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */,
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,

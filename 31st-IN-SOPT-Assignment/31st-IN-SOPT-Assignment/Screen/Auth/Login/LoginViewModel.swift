@@ -7,8 +7,8 @@
 
 import Foundation
 
-import RxCocoa
 import RxSwift
+import RxRelay
 
 final class LoginViewModel: ViewModel {
     
