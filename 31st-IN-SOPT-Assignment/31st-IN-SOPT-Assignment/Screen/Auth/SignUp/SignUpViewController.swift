@@ -7,10 +7,16 @@
 
 import UIKit
 
+import RxSwift
 import SnapKit
 import Then
 
 final class SignUpViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    private let viewModel = SignUpViewModel()
+    private let disposBag = DisposeBag()
     
     // MARK: - UI Property
     
@@ -27,18 +33,15 @@ final class SignUpViewController: UIViewController {
     private lazy var passwordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
-        $0.addTarget(self, action: #selector(textFieldDidCheckPassword), for: .editingChanged)
     }
     
     private lazy var checkpasswordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호 확인"
         $0.isSecureTextEntry = true
-        $0.addTarget(self, action: #selector(textFieldDidCheckPassword), for: .editingChanged)
     }
     
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
-        $0.addTarget(self, action: #selector(presentAuthCompleteVC), for: .touchUpInside)
     }
     
     // MARK: - Life Cycle
@@ -49,28 +52,39 @@ final class SignUpViewController: UIViewController {
         setBackgroundColor()
         setNavigationbarHideen()
         setLayout()
+        bind()
     }
     
-    // MARK: - @objc
+    // MARK: - Bind
     
-    @objc private func textFieldDidCheckPassword() {
-        if passwordTextField.text == checkpasswordTextField.text {
-            createButton.isUserInteractionEnabled = true
-        } else {
-            createButton.isUserInteractionEnabled = false
-        }
-    }
-    
-    @objc private func presentAuthCompleteVC() {
-        let authComplete = AuthCompleteViewController()
-        authComplete.modalPresentationStyle = .fullScreen
+    private func bind() {
+        let input = SignUpViewModel.Input(
+            emailDidEdit: emailTextField.rx.text.orEmpty.asObservable(),
+            passwordDidEdit: passwordTextField.rx.text.orEmpty.asObservable(),
+            passwrodCheckDidEdit: checkpasswordTextField.rx.text.orEmpty.asObservable(),
+            signUpTap: createButton.rx.tap.asObservable())
         
-        authComplete.setData(string: emailTextField.text ?? "")
+        let output = viewModel.transform(from: input)
         
-        present(authComplete, animated: true) {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        output.goToAuthComplete
+            .bind(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let authComplete = AuthCompleteViewController()
+                authComplete.modalPresentationStyle = .fullScreen
+                
+                authComplete.setData(string: self.emailTextField.text ?? "")
+                
+                self.present(authComplete, animated: true) {
+                self.navigationController?.popToRootViewController(animated: true)
+                }
+            })
+            .disposed(by: disposBag)
+        
+        output.enableSignUp
+            .bind(to: createButton.rx.isUserInteractionEnabled)
+            .disposed(by: disposBag)
     }
+    
     
     // MARK: - Custom Method
     
