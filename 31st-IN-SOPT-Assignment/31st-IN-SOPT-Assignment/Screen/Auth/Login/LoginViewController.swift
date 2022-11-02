@@ -52,7 +52,7 @@ final class LoginViewController: UIViewController {
     
     private lazy var loginButton = KakaoButton().then {
         $0.setTitle("카카오계정 로그인", for: .normal)
-        $0.addTarget(self, action: #selector(presentAuthComplete), for: .touchUpInside)
+//        $0.addTarget(self, action: #selector(presentAuthComplete), for: .touchUpInside)
     }
     
     private lazy var createButton = KakaoButton().then {
@@ -88,13 +88,13 @@ final class LoginViewController: UIViewController {
 //        self.navigationController?.pushViewController(signUpVC, animated: true)
 //    }
     
-    @objc private func presentAuthComplete() {
-        let authCompleteVC = AuthCompleteViewController()
-        authCompleteVC.modalPresentationStyle = .fullScreen
-        
-        authCompleteVC.setData(string: emailTextField.text ?? "")
-        self.present(authCompleteVC, animated: true)
-    }
+//    @objc private func presentAuthComplete() {
+//        let authCompleteVC = AuthCompleteViewController()
+//        authCompleteVC.modalPresentationStyle = .fullScreen
+//
+//        authCompleteVC.setData(string: emailTextField.text ?? "")
+//        self.present(authCompleteVC, animated: true)
+//    }
     
 //    @objc private func textFieldDidEndEditing() {
 //        if emailTextField.hasText && passwordTextField.hasText {
@@ -118,8 +118,14 @@ final class LoginViewController: UIViewController {
         
         let output = viewModel.transform(from: input)
         
-        output.enableLogin
-            .bind(to: loginButton.rx.isUserInteractionEnabled)
+        output.goToAuthComplete
+            .bind(onNext: { result in
+                let authCompleteVC = AuthCompleteViewController()
+                authCompleteVC.modalPresentationStyle = .fullScreen
+                
+                authCompleteVC.setData(string: self.emailTextField.text ?? "")
+                self.present(authCompleteVC, animated: true)
+            })
             .disposed(by: disposeBag)
         
         output.goToSignUp
@@ -127,6 +133,10 @@ final class LoginViewController: UIViewController {
                 let signUpVC = SignUpViewController()
                 self.navigationController?.pushViewController(signUpVC, animated: true)
             })
+            .disposed(by: disposeBag)
+        
+        output.enableLogin
+            .bind(to: loginButton.rx.isUserInteractionEnabled)
             .disposed(by: disposeBag)
         
         // output 1 - 버튼의 enable 활성화

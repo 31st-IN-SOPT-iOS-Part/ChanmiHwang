@@ -9,7 +9,6 @@ import Foundation
 
 import RxCocoa
 import RxSwift
-import SwiftUI
 
 final class LoginViewModel: ViewModel {
     
@@ -27,10 +26,17 @@ final class LoginViewModel: ViewModel {
     struct Output {
         let enableLogin = PublishRelay<Bool>()
         let goToSignUp = PublishRelay<Bool>()
+        let goToAuthComplete = PublishRelay<Bool>()
     }
     
     func transform(from input: Input) -> Output {
         let output = Output()
+        
+        input.loginTap
+            .subscribe(onNext: { reseult in
+                output.goToAuthComplete.accept(true)
+            })
+            .disposed(by: disposeBag)
         
         input.signUpTap
             .subscribe(onNext: { result in
