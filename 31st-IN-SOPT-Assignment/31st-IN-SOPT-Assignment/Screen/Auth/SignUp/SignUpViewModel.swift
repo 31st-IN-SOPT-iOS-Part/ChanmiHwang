@@ -30,7 +30,7 @@ final class SignUpViewModel: ViewModel {
         let output = Output()
         
         input.signUpTap
-            .subscribe(onNext: {
+            .bind(onNext: {
                 output.goToAuthComplete.accept(true)
             })
             .disposed(by: disposeBag)

@@ -31,13 +31,13 @@ final class LoginViewModel: ViewModel {
         let output = Output()
         
         input.loginTap
-            .subscribe(onNext: { reseult in
+            .bind(onNext: {
                 output.goToAuthComplete.accept(true)
             })
             .disposed(by: disposeBag)
         
         input.signUpTap
-            .subscribe(onNext: { result in
+            .bind(onNext: {
                 output.goToSignUp.accept(true)
             })
             .disposed(by: disposeBag)
