@@ -119,7 +119,8 @@ final class LoginViewController: UIViewController {
         let output = viewModel.transform(from: input)
         
         output.goToAuthComplete
-            .bind(onNext: { result in
+            .bind(onNext: { [weak self] result in
+                guard let self = self else { return }
                 let authCompleteVC = AuthCompleteViewController()
                 authCompleteVC.modalPresentationStyle = .fullScreen
                 
@@ -129,7 +130,8 @@ final class LoginViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.goToSignUp
-            .bind(onNext: { result in
+            .bind(onNext: { [weak self] result in
+                guard let self = self else { return }
                 let signUpVC = SignUpViewController()
                 self.navigationController?.pushViewController(signUpVC, animated: true)
             })
