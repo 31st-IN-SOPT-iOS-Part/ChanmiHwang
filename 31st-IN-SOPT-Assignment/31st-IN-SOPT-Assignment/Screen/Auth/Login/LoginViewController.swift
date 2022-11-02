@@ -17,8 +17,8 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Property
     
-    private var viewModel = LoginViewModel()
-    private var disposeBag = DisposeBag()
+    private let viewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - UI Property
     
@@ -41,24 +41,20 @@ final class LoginViewController: UIViewController {
     
     private lazy var emailTextField = KakaoTextField().then {
         $0.placeholder = "이메일 또는 전화번호"
-//         $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var passwordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
-//         $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var loginButton = KakaoButton().then {
         $0.setTitle("카카오계정 로그인", for: .normal)
-//        $0.addTarget(self, action: #selector(presentAuthComplete), for: .touchUpInside)
     }
     
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
         $0.isUserInteractionEnabled = true
-//        $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
     }
     
     private let findEmailLabel = UILabel().then {
@@ -74,41 +70,16 @@ final class LoginViewController: UIViewController {
         
         setBackgroundColor()
         setLayout()
-        bindUI()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         resetTextField()
     }
     
-    // MARK: - @objc
+    // MARK: - Bind
     
-//    @objc private func pushSignUpVC() {
-//        let signUpVC = SignUpViewController()
-//        self.navigationController?.pushViewController(signUpVC, animated: true)
-//    }
-    
-//    @objc private func presentAuthComplete() {
-//        let authCompleteVC = AuthCompleteViewController()
-//        authCompleteVC.modalPresentationStyle = .fullScreen
-//
-//        authCompleteVC.setData(string: emailTextField.text ?? "")
-//        self.present(authCompleteVC, animated: true)
-//    }
-    
-//    @objc private func textFieldDidEndEditing() {
-//        if emailTextField.hasText && passwordTextField.hasText {
-//            loginButton.isUserInteractionEnabled = true
-//        } else {
-//            loginButton.isUserInteractionEnabled = false
-//        }
-//    }
-    
-    // MARK: - Bind UI
-    
-    private func bindUI() {
-        // Input 2 - ID, password textField 입력
-        
+    private func bind() {
         let input = LoginViewModel.Input(
             emailDidEdit: emailTextField.rx.text.orEmpty.asObservable(),
             passwordDidEdit: passwordTextField.rx.text.orEmpty.asObservable(),
@@ -140,8 +111,6 @@ final class LoginViewController: UIViewController {
         output.enableLogin
             .bind(to: loginButton.rx.isUserInteractionEnabled)
             .disposed(by: disposeBag)
-        
-        // output 1 - 버튼의 enable 활성화
     }
     
     // MARK: - Custom Method
