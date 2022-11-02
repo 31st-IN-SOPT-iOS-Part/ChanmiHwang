@@ -9,6 +9,7 @@ import Foundation
 
 import RxCocoa
 import RxSwift
+import SwiftUI
 
 final class LoginViewModel: ViewModel {
     
@@ -30,6 +31,12 @@ final class LoginViewModel: ViewModel {
     
     func transform(from input: Input) -> Output {
         let output = Output()
+        
+        input.signUpTap
+            .subscribe(onNext: { result in
+                output.goToSignUp.accept(true)
+            })
+            .disposed(by: disposeBag)
         
         Observable.combineLatest(input.emailDidEdit, input.passwordDidEdit)
             .map { !$0.0.isEmpty && !$0.1.isEmpty }

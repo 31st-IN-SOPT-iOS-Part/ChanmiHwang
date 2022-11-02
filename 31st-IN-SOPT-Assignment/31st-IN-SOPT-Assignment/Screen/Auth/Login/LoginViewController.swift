@@ -58,7 +58,7 @@ final class LoginViewController: UIViewController {
     private lazy var createButton = KakaoButton().then {
         $0.setTitle("새로운 카카오계정 만들기", for: .normal)
         $0.isUserInteractionEnabled = true
-        $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
+//        $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
     }
     
     private let findEmailLabel = UILabel().then {
@@ -83,10 +83,10 @@ final class LoginViewController: UIViewController {
     
     // MARK: - @objc
     
-    @objc private func pushSignUpVC() {
-        let signUpVC = SignUpViewController()
-        self.navigationController?.pushViewController(signUpVC, animated: true)
-    }
+//    @objc private func pushSignUpVC() {
+//        let signUpVC = SignUpViewController()
+//        self.navigationController?.pushViewController(signUpVC, animated: true)
+//    }
     
     @objc private func presentAuthComplete() {
         let authCompleteVC = AuthCompleteViewController()
@@ -120,6 +120,13 @@ final class LoginViewController: UIViewController {
         
         output.enableLogin
             .bind(to: loginButton.rx.isUserInteractionEnabled)
+            .disposed(by: disposeBag)
+        
+        output.goToSignUp
+            .bind(onNext: { result in
+                let signUpVC = SignUpViewController()
+                self.navigationController?.pushViewController(signUpVC, animated: true)
+            })
             .disposed(by: disposeBag)
         
         // output 1 - 버튼의 enable 활성화
