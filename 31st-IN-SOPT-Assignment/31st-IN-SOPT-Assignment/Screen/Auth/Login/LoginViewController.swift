@@ -7,12 +7,20 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+import RxRelay
 import SnapKit
 import Then
 
 final class LoginViewController: UIViewController {
     
     // MARK: - Property
+    
+    private var viewModel = LoginViewModel()
+    private var disposeBag = DisposeBag()
+    
+    // MARK: - UI Property
     
     private let startKakaoLabel = UILabel().then {
         $0.text = "카카오톡을 시작합니다"
@@ -33,13 +41,13 @@ final class LoginViewController: UIViewController {
     
     private lazy var emailTextField = KakaoTextField().then {
         $0.placeholder = "이메일 또는 전화번호"
-        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
+//         $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var passwordTextField = KakaoTextField().then {
         $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
-        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
+//         $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
     }
     
     private lazy var loginButton = KakaoButton().then {
@@ -66,6 +74,7 @@ final class LoginViewController: UIViewController {
         
         setBackgroundColor()
         setLayout()
+        bindUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,12 +96,33 @@ final class LoginViewController: UIViewController {
         self.present(authCompleteVC, animated: true)
     }
     
-    @objc private func textFieldDidEndEditing() {
-        if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.isUserInteractionEnabled = true
-        } else {
-            loginButton.isUserInteractionEnabled = false
-        }
+//    @objc private func textFieldDidEndEditing() {
+//        if emailTextField.hasText && passwordTextField.hasText {
+//            loginButton.isUserInteractionEnabled = true
+//        } else {
+//            loginButton.isUserInteractionEnabled = false
+//        }
+//    }
+    
+    // MARK: - Bind UI
+    
+    private func bindUI() {
+        // Input 2 - ID, password textField 입력
+        
+        let input = LoginViewModel.Input(
+            emailDidEdit: emailTextField.rx.text.orEmpty.asObservable(),
+            passwordDidEdit: passwordTextField.rx.text.orEmpty.asObservable(),
+            loginTap: loginButton.rx.tap.asObservable(),
+            signUpTap: createButton.rx.tap.asObservable()
+        )
+        
+        let output = viewModel.transform(from: input)
+        
+        output.enableLogin
+            .bind(to: loginButton.rx.isUserInteractionEnabled)
+            .disposed(by: disposeBag)
+        
+        // output 1 - 버튼의 enable 활성화
     }
     
     // MARK: - Custom Method
