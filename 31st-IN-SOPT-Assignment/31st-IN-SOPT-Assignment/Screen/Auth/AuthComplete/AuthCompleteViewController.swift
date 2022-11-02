@@ -40,17 +40,10 @@ final class AuthCompleteViewController: UIViewController {
         setTextAlignment()
     }
     
-    var disposeBag = DisposeBag()
-    
     // MARK: - @objc
     
     @objc private func presentMainView() {
-//        changeMainViewController()
-        Observable.just("Hello World")
-            .subscribe(onNext: { str in
-                print(str)
-            })
-            .disposed(by: disposeBag)
+        changeMainViewController()
     }
     
     // MARK: - Custom Method

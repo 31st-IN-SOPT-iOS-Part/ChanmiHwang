@@ -26,6 +26,8 @@
 		4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A628F01FBB00AB688F /* KakaoTextField.swift */; };
 		4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385B128F04E3600AB688F /* UILabel+.swift */; };
 		4A709B20291285EF00105234 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B1F291285EF00105234 /* ViewModel.swift */; };
+		4A709B222912D04E00105234 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B212912D04E00105234 /* LoginView.swift */; };
+		4A709B242912D97900105234 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B232912D97900105234 /* SignUpView.swift */; };
 		4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48728F7A6620017BA04 /* UIColor+.swift */; };
 		4AB6E48B28F7A89F0017BA04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */; };
 		4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48C28F7AA7D0017BA04 /* Image.swift */; };
@@ -56,6 +58,8 @@
 		4A4385A628F01FBB00AB688F /* KakaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoTextField.swift; sourceTree = "<group>"; };
 		4A4385B128F04E3600AB688F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		4A709B1F291285EF00105234 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4A709B212912D04E00105234 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4A709B232912D97900105234 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4AB6E48728F7A6620017BA04 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4AB6E48C28F7AA7D0017BA04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			children = (
 				4A4385A128EFFAF200AB688F /* LoginViewController.swift */,
 				4AF80C36291165AF00B084CA /* LoginViewModel.swift */,
+				4A709B212912D04E00105234 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				4A43859C28EFFAE100AB688F /* SignUpViewController.swift */,
 				4AF80C39291165D900B084CA /* SignUpViewModel.swift */,
+				4A709B232912D97900105234 /* SignUpView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -423,6 +429,8 @@
 				4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */,
 				4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */,
 				4A43858828EFFA7900AB688F /* Constant.swift in Sources */,
+				4A709B242912D97900105234 /* SignUpView.swift in Sources */,
+				4A709B222912D04E00105234 /* LoginView.swift in Sources */,
 				4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */,
 				4A20CD6328F8095500947272 /* ProfileDetailViewController.swift in Sources */,
 				4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */,

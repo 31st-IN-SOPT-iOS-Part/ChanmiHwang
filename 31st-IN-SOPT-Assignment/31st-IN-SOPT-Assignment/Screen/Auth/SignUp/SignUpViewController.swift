@@ -7,51 +7,28 @@
 
 import UIKit
 
+import RxCocoa
 import RxSwift
-import SnapKit
-import Then
 
 final class SignUpViewController: UIViewController {
     
     // MARK: - Property
     
+    private let signUpView = SignUpView()
     private let viewModel = SignUpViewModel()
     private let disposBag = DisposeBag()
     
-    // MARK: - UI Property
-    
-    private let startKakaoLabel = UILabel().then {
-        $0.text = "카카오톡을 시작합니다"
-        $0.textColor = .black
-        $0.font = .systemFont(ofSize: 22, weight: .medium)
-    }
-    
-    private lazy var emailTextField = KakaoTextField().then {
-        $0.placeholder = "이메일 또는 전화번호"
-    }
-    
-    private lazy var passwordTextField = KakaoTextField().then {
-        $0.placeholder = "비밀번호"
-        $0.isSecureTextEntry = true
-    }
-    
-    private lazy var checkpasswordTextField = KakaoTextField().then {
-        $0.placeholder = "비밀번호 확인"
-        $0.isSecureTextEntry = true
-    }
-    
-    private lazy var createButton = KakaoButton().then {
-        $0.setTitle("새로운 카카오계정 만들기", for: .normal)
-    }
-    
     // MARK: - Life Cycle
+    
+    override func loadView() {
+        view = signUpView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackgroundColor()
         setNavigationbarHideen()
-        setLayout()
         bind()
     }
     
@@ -59,10 +36,10 @@ final class SignUpViewController: UIViewController {
     
     private func bind() {
         let input = SignUpViewModel.Input(
-            emailDidEdit: emailTextField.rx.text.orEmpty.asObservable(),
-            passwordDidEdit: passwordTextField.rx.text.orEmpty.asObservable(),
-            passwrodCheckDidEdit: checkpasswordTextField.rx.text.orEmpty.asObservable(),
-            signUpTap: createButton.rx.tap.asObservable())
+            emailDidEdit: signUpView.emailTextField.rx.text.orEmpty.asObservable(),
+            passwordDidEdit: signUpView.passwordTextField.rx.text.orEmpty.asObservable(),
+            passwrodCheckDidEdit: signUpView.checkpasswordTextField.rx.text.orEmpty.asObservable(),
+            signUpTap: signUpView.createButton.rx.tap.asObservable())
         
         let output = viewModel.transform(from: input)
         
@@ -72,7 +49,7 @@ final class SignUpViewController: UIViewController {
                 let authComplete = AuthCompleteViewController()
                 authComplete.modalPresentationStyle = .fullScreen
                 
-                authComplete.setData(string: self.emailTextField.text ?? "")
+                authComplete.setData(string: self.signUpView.emailTextField.text ?? "")
                 
                 self.present(authComplete, animated: true) {
                 self.navigationController?.popToRootViewController(animated: true)
@@ -81,7 +58,7 @@ final class SignUpViewController: UIViewController {
             .disposed(by: disposBag)
         
         output.enableSignUp
-            .bind(to: createButton.rx.isUserInteractionEnabled)
+            .bind(to: signUpView.createButton.rx.isUserInteractionEnabled)
             .disposed(by: disposBag)
     }
     
@@ -94,47 +71,5 @@ final class SignUpViewController: UIViewController {
     
     private func setNavigationbarHideen() {
         self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    private func setLayout() {
-        setHierarchy()
-        setConstraint()
-    }
-    
-    private func setHierarchy() {
-        view.addSubviews([startKakaoLabel, emailTextField, passwordTextField,
-                          checkpasswordTextField, createButton])
-    }
-    
-    private func setConstraint() {
-        startKakaoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
-            $0.centerX.equalToSuperview()
-        }
-        
-        emailTextField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(21)
-            $0.top.equalTo(startKakaoLabel.snp.bottom).offset(116)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(49)
-        }
-        
-        passwordTextField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(21)
-            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
-            $0.height.equalTo(49)
-        }
-        
-        checkpasswordTextField.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(21)
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(10)
-            $0.height.equalTo(49)
-        }
-        
-        createButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(21)
-            $0.top.equalTo(checkpasswordTextField.snp.bottom).offset(26)
-            $0.height.equalTo(44)
-        }
     }
 }
