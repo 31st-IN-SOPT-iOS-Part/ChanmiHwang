@@ -8,7 +8,8 @@ target '31st-IN-SOPT-Assignment' do
   # Pods for 31st-IN-SOPT-Assignment
   pod 'Moya', '~> 15.0'
   pod 'Kingfisher', '~> 7.0'
-
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
 end

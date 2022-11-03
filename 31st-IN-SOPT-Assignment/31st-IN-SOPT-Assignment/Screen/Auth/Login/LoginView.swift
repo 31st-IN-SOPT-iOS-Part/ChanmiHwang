@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
+//  LoginView.swift
 //  31st-IN-SOPT-Assignment
 //
-//  Created by 황찬미 on 2022/10/07.
+//  Created by 황찬미 on 2022/11/03.
 //
 
 import UIKit
@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class LoginViewController: UIViewController {
+final class LoginView: UIView {
     
-    // MARK: - Property
+    // MARK: - UI Property
     
     private let startKakaoLabel = UILabel().then {
         $0.text = "카카오톡을 시작합니다"
@@ -31,80 +31,42 @@ final class LoginViewController: UIViewController {
         $0.font = .systemFont(ofSize: 15, weight: .regular)
     }
     
-    private lazy var emailTextField = KakaoTextField().then {
-        $0.placeholder = "이메일 또는 전화번호"
-        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
-    }
-    
-    private lazy var passwordTextField = KakaoTextField().then {
-        $0.placeholder = "비밀번호"
-        $0.isSecureTextEntry = true
-        $0.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingChanged)
-    }
-    
-    private lazy var loginButton = KakaoButton().then {
-        $0.setTitle("카카오계정 로그인", for: .normal)
-        $0.addTarget(self, action: #selector(presentAuthComplete), for: .touchUpInside)
-    }
-    
-    private lazy var createButton = KakaoButton().then {
-        $0.setTitle("새로운 카카오계정 만들기", for: .normal)
-        $0.isUserInteractionEnabled = true
-        $0.addTarget(self, action: #selector(pushSignUpVC), for: .touchUpInside)
-    }
-    
     private let findEmailLabel = UILabel().then {
         $0.text = "카카오계정 또는 비밀번호 찾기"
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 13, weight: .medium)
     }
     
-    // MARK: - Life Cycle
+    let emailTextField = KakaoTextField().then {
+        $0.placeholder = "이메일 또는 전화번호"
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setBackgroundColor()
+    let passwordTextField = KakaoTextField().then {
+        $0.placeholder = "비밀번호"
+        $0.isSecureTextEntry = true
+    }
+    
+    let loginButton = KakaoButton().then {
+        $0.setTitle("카카오계정 로그인", for: .normal)
+    }
+    
+    let createButton = KakaoButton().then {
+        $0.setTitle("새로운 카카오계정 만들기", for: .normal)
+        $0.isUserInteractionEnabled = true
+    }
+    
+    // MARK: - Initialize
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        resetTextField()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - @objc
-    
-    @objc private func pushSignUpVC() {
-        let signUpVC = SignUpViewController()
-        self.navigationController?.pushViewController(signUpVC, animated: true)
-    }
-    
-    @objc private func presentAuthComplete() {
-        let authCompleteVC = AuthCompleteViewController()
-        authCompleteVC.modalPresentationStyle = .fullScreen
-        
-        authCompleteVC.setData(string: emailTextField.text ?? "")
-        self.present(authCompleteVC, animated: true)
-    }
-    
-    @objc private func textFieldDidEndEditing() {
-        if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.isUserInteractionEnabled = true
-        } else {
-            loginButton.isUserInteractionEnabled = false
-        }
-    }
-    
-    // MARK: - Custom Method
-    
-    private func setBackgroundColor() {
-        view.backgroundColor = .white
-    }
-    
-    private func resetTextField() {
-        emailTextField.text = ""
-        passwordTextField.text = ""
-    }
+    // MARK: - Layout
     
     private func setLayout() {
         setHierarchy()
@@ -112,13 +74,13 @@ final class LoginViewController: UIViewController {
     }
     
     private func setHierarchy() {
-        view.addSubviews([startKakaoLabel, explanationLabel, emailTextField,
+        addSubviews([startKakaoLabel, explanationLabel, emailTextField,
                           passwordTextField, loginButton, createButton, findEmailLabel])
     }
     
     private func setConstraint() {
         startKakaoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
+            $0.top.equalTo(safeAreaLayoutGuide).inset(40)
             $0.centerX.equalToSuperview()
         }
         
