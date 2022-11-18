@@ -13,10 +13,6 @@
 		4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43855B28EFF85700AB688F /* SceneDelegate.swift */; };
 		4A43856328EFF85A00AB688F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A43856228EFF85A00AB688F /* Assets.xcassets */; };
 		4A43856628EFF85A00AB688F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A43856428EFF85A00AB688F /* LaunchScreen.storyboard */; };
-		4A43857928EFFA3300AB688F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857828EFFA3300AB688F /* API.swift */; };
-		4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857A28EFFA3A00AB688F /* DataModel.swift */; };
-		4A43857D28EFFA3E00AB688F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857C28EFFA3E00AB688F /* Service.swift */; };
-		4A43857F28EFFA4400AB688F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43857E28EFFA4400AB688F /* Utility.swift */; };
 		4A43858828EFFA7900AB688F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858728EFFA7900AB688F /* Constant.swift */; };
 		4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43858B28EFFA8900AB688F /* UIView+.swift */; };
 		4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */; };
@@ -28,6 +24,19 @@
 		4A709B20291285EF00105234 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B1F291285EF00105234 /* ViewModel.swift */; };
 		4A709B222912D04E00105234 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B212912D04E00105234 /* LoginView.swift */; };
 		4A709B242912D97900105234 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B232912D97900105234 /* SignUpView.swift */; };
+		4A8914DB2927ABA600A7466A /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914DA2927ABA600A7466A /* URLConstant.swift */; };
+		4A8914DF2927ABC400A7466A /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914DE2927ABC400A7466A /* MoyaLoggingPlugin.swift */; };
+		4A8914E12927ABD600A7466A /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914E02927ABD600A7466A /* GeneralResponse.swift */; };
+		4A8914E32927ABE200A7466A /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914E22927ABE200A7466A /* BaseTargetType.swift */; };
+		4A8914E52927ABED00A7466A /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914E42927ABED00A7466A /* NetworkConstant.swift */; };
+		4A8914EA2927AC5100A7466A /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914E92927AC5100A7466A /* SignupRequest.swift */; };
+		4A8914EC2927AC5B00A7466A /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914EB2927AC5B00A7466A /* SignupResponse.swift */; };
+		4A8914EE2927ACA300A7466A /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914ED2927ACA300A7466A /* SignupService.swift */; };
+		4A8914F02927AE8400A7466A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914EF2927AE8400A7466A /* NetworkResult.swift */; };
+		4A8914F22927AEB400A7466A /* SignupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914F12927AEB400A7466A /* SignupAPI.swift */; };
+		4A8914F62927ED6800A7466A /* LoginReqeust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914F52927ED6800A7466A /* LoginReqeust.swift */; };
+		4A8914F82927EEBC00A7466A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914F72927EEBC00A7466A /* LoginResponse.swift */; };
+		4A8914FA2927F4F200A7466A /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8914F92927F4F200A7466A /* LoginAPI.swift */; };
 		4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48728F7A6620017BA04 /* UIColor+.swift */; };
 		4AB6E48B28F7A89F0017BA04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */; };
 		4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6E48C28F7AA7D0017BA04 /* Image.swift */; };
@@ -45,10 +54,6 @@
 		4A43856228EFF85A00AB688F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A43856528EFF85A00AB688F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A43856728EFF85A00AB688F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A43857828EFFA3300AB688F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		4A43857A28EFFA3A00AB688F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		4A43857C28EFFA3E00AB688F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		4A43857E28EFFA4400AB688F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		4A43858728EFFA7900AB688F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4A43858B28EFFA8900AB688F /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		4A43859828EFFAD300AB688F /* AuthCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCompleteViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,19 @@
 		4A709B1F291285EF00105234 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4A709B212912D04E00105234 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4A709B232912D97900105234 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4A8914DA2927ABA600A7466A /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
+		4A8914DE2927ABC400A7466A /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		4A8914E02927ABD600A7466A /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		4A8914E22927ABE200A7466A /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		4A8914E42927ABED00A7466A /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		4A8914E92927AC5100A7466A /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		4A8914EB2927AC5B00A7466A /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		4A8914ED2927ACA300A7466A /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
+		4A8914EF2927AE8400A7466A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		4A8914F12927AEB400A7466A /* SignupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAPI.swift; sourceTree = "<group>"; };
+		4A8914F52927ED6800A7466A /* LoginReqeust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReqeust.swift; sourceTree = "<group>"; };
+		4A8914F72927EEBC00A7466A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4A8914F92927F4F200A7466A /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
 		4AB6E48728F7A6620017BA04 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		4AB6E48A28F7A89F0017BA04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4AB6E48C28F7AA7D0017BA04 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -104,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4A43858028EFFA5000AB688F /* Global */,
-				4A43857328EFFA1500AB688F /* Network */,
+				4A8914D82927A9A900A7466A /* Network */,
 				4A43857128EFFA0C00AB688F /* Screen */,
 				4A43856D28EFF9BD00AB688F /* Resource */,
 			);
@@ -166,49 +184,6 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		4A43857328EFFA1500AB688F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				4A43857428EFFA1C00AB688F /* Utility */,
-				4A43857528EFFA1F00AB688F /* API */,
-				4A43857728EFFA2600AB688F /* DataModel */,
-				4A43857628EFFA2200AB688F /* Service */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		4A43857428EFFA1C00AB688F /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				4A43857E28EFFA4400AB688F /* Utility.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		4A43857528EFFA1F00AB688F /* API */ = {
-			isa = PBXGroup;
-			children = (
-				4A43857828EFFA3300AB688F /* API.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		4A43857628EFFA2200AB688F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				4A43857C28EFFA3E00AB688F /* Service.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		4A43857728EFFA2600AB688F /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				4A43857A28EFFA3A00AB688F /* DataModel.swift */,
-			);
-			path = DataModel;
-			sourceTree = "<group>";
-		};
 		4A43858028EFFA5000AB688F /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +230,74 @@
 				4A709B1F291285EF00105234 /* ViewModel.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4A8914D82927A9A900A7466A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914E82927ABFC00A7466A /* DataModel */,
+				4A8914E72927ABF800A7466A /* Service */,
+				4A8914E62927ABF500A7466A /* API */,
+				4A8914D92927AB9D00A7466A /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4A8914D92927AB9D00A7466A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914DA2927ABA600A7466A /* URLConstant.swift */,
+				4A8914DE2927ABC400A7466A /* MoyaLoggingPlugin.swift */,
+				4A8914E02927ABD600A7466A /* GeneralResponse.swift */,
+				4A8914E22927ABE200A7466A /* BaseTargetType.swift */,
+				4A8914E42927ABED00A7466A /* NetworkConstant.swift */,
+				4A8914EF2927AE8400A7466A /* NetworkResult.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4A8914E62927ABF500A7466A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914F12927AEB400A7466A /* SignupAPI.swift */,
+				4A8914F92927F4F200A7466A /* LoginAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4A8914E72927ABF800A7466A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914ED2927ACA300A7466A /* SignupService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4A8914E82927ABFC00A7466A /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914F42927ED6100A7466A /* Login */,
+				4A8914F32927ED5A00A7466A /* Signup */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		4A8914F32927ED5A00A7466A /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914E92927AC5100A7466A /* SignupRequest.swift */,
+				4A8914EB2927AC5B00A7466A /* SignupResponse.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		4A8914F42927ED6100A7466A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A8914F52927ED6800A7466A /* LoginReqeust.swift */,
+				4A8914F72927EEBC00A7466A /* LoginResponse.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4AB6E48928F7A88E0017BA04 /* Main */ = {
@@ -425,30 +468,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A43857F28EFFA4400AB688F /* Utility.swift in Sources */,
+				4A8914E52927ABED00A7466A /* NetworkConstant.swift in Sources */,
+				4A8914FA2927F4F200A7466A /* LoginAPI.swift in Sources */,
+				4A8914E32927ABE200A7466A /* BaseTargetType.swift in Sources */,
 				4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */,
+				4A8914EC2927AC5B00A7466A /* SignupResponse.swift in Sources */,
 				4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */,
 				4A43858828EFFA7900AB688F /* Constant.swift in Sources */,
 				4A709B242912D97900105234 /* SignUpView.swift in Sources */,
 				4A709B222912D04E00105234 /* LoginView.swift in Sources */,
-				4A43857B28EFFA3A00AB688F /* DataModel.swift in Sources */,
+				4A8914F62927ED6800A7466A /* LoginReqeust.swift in Sources */,
 				4A20CD6328F8095500947272 /* ProfileDetailViewController.swift in Sources */,
 				4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */,
 				4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */,
 				4AF80C37291165AF00B084CA /* LoginViewModel.swift in Sources */,
 				4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */,
 				4AB6E48B28F7A89F0017BA04 /* MainViewController.swift in Sources */,
+				4A8914EA2927AC5100A7466A /* SignupRequest.swift in Sources */,
 				4A43855A28EFF85700AB688F /* AppDelegate.swift in Sources */,
 				4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */,
+				4A8914E12927ABD600A7466A /* GeneralResponse.swift in Sources */,
+				4A8914F22927AEB400A7466A /* SignupAPI.swift in Sources */,
 				4AF80C3A291165D900B084CA /* SignUpViewModel.swift in Sources */,
 				4A709B20291285EF00105234 /* ViewModel.swift in Sources */,
-				4A43857928EFFA3300AB688F /* API.swift in Sources */,
+				4A8914F82927EEBC00A7466A /* LoginResponse.swift in Sources */,
 				4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */,
+				4A8914F02927AE8400A7466A /* NetworkResult.swift in Sources */,
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,
+				4A8914DB2927ABA600A7466A /* URLConstant.swift in Sources */,
 				4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */,
 				4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */,
+				4A8914EE2927ACA300A7466A /* SignupService.swift in Sources */,
 				4A20CD6128F7D92A00947272 /* UIViewController+.swift in Sources */,
-				4A43857D28EFFA3E00AB688F /* Service.swift in Sources */,
+				4A8914DF2927ABC400A7466A /* MoyaLoggingPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
