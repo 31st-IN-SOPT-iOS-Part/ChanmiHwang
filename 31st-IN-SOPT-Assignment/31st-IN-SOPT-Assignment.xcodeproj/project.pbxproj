@@ -21,6 +21,11 @@
 		4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A528F01FBB00AB688F /* KakaoButton.swift */; };
 		4A4385A828F01FBB00AB688F /* KakaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385A628F01FBB00AB688F /* KakaoTextField.swift */; };
 		4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4385B128F04E3600AB688F /* UILabel+.swift */; };
+		4A503E1D29288ECD009887CA /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A503E1C29288ECD009887CA /* MusicModel.swift */; };
+		4A503E1F29288EE4009887CA /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A503E1E29288EE4009887CA /* MusicListViewController.swift */; };
+		4A503E2129288F00009887CA /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A503E2029288F00009887CA /* MusicTableViewCell.swift */; };
+		4A503E2329288F16009887CA /* MusicGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A503E2229288F16009887CA /* MusicGridViewController.swift */; };
+		4A503E2529288F27009887CA /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A503E2429288F27009887CA /* MusicCollectionViewCell.swift */; };
 		4A709B20291285EF00105234 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B1F291285EF00105234 /* ViewModel.swift */; };
 		4A709B222912D04E00105234 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B212912D04E00105234 /* LoginView.swift */; };
 		4A709B242912D97900105234 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A709B232912D97900105234 /* SignUpView.swift */; };
@@ -62,6 +67,11 @@
 		4A4385A528F01FBB00AB688F /* KakaoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoButton.swift; sourceTree = "<group>"; };
 		4A4385A628F01FBB00AB688F /* KakaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoTextField.swift; sourceTree = "<group>"; };
 		4A4385B128F04E3600AB688F /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		4A503E1C29288ECD009887CA /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
+		4A503E1E29288EE4009887CA /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
+		4A503E2029288F00009887CA /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		4A503E2229288F16009887CA /* MusicGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGridViewController.swift; sourceTree = "<group>"; };
+		4A503E2429288F27009887CA /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A709B1F291285EF00105234 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4A709B212912D04E00105234 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4A709B232912D97900105234 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				4A43855828EFF85700AB688F /* 31st-IN-SOPT-Assignment */,
+				4A503E1B29288EA5009887CA /* 3st-Seminar */,
 				4A43855728EFF85700AB688F /* Products */,
 				77EE91302867DEC1BD89BB8D /* Pods */,
 				7B07A1FDF64DA7E3061ACF46 /* Frameworks */,
@@ -222,6 +233,18 @@
 				4AB6E48C28F7AA7D0017BA04 /* Image.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		4A503E1B29288EA5009887CA /* 3st-Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				4A503E1C29288ECD009887CA /* MusicModel.swift */,
+				4A503E1E29288EE4009887CA /* MusicListViewController.swift */,
+				4A503E2029288F00009887CA /* MusicTableViewCell.swift */,
+				4A503E2229288F16009887CA /* MusicGridViewController.swift */,
+				4A503E2429288F27009887CA /* MusicCollectionViewCell.swift */,
+			);
+			path = "3st-Seminar";
 			sourceTree = "<group>";
 		};
 		4A709B1E291285E600105234 /* Protocol */ = {
@@ -474,6 +497,7 @@
 				4AB6E48D28F7AA7D0017BA04 /* Image.swift in Sources */,
 				4A8914EC2927AC5B00A7466A /* SignupResponse.swift in Sources */,
 				4AB6E48828F7A6620017BA04 /* UIColor+.swift in Sources */,
+				4A503E1F29288EE4009887CA /* MusicListViewController.swift in Sources */,
 				4A43858828EFFA7900AB688F /* Constant.swift in Sources */,
 				4A709B242912D97900105234 /* SignUpView.swift in Sources */,
 				4A709B222912D04E00105234 /* LoginView.swift in Sources */,
@@ -481,6 +505,7 @@
 				4A20CD6328F8095500947272 /* ProfileDetailViewController.swift in Sources */,
 				4A43858C28EFFA8900AB688F /* UIView+.swift in Sources */,
 				4A4385A728F01FBB00AB688F /* KakaoButton.swift in Sources */,
+				4A503E2529288F27009887CA /* MusicCollectionViewCell.swift in Sources */,
 				4AF80C37291165AF00B084CA /* LoginViewModel.swift in Sources */,
 				4A4385B228F04E3600AB688F /* UILabel+.swift in Sources */,
 				4AB6E48B28F7A89F0017BA04 /* MainViewController.swift in Sources */,
@@ -495,12 +520,15 @@
 				4A43859D28EFFAE100AB688F /* SignUpViewController.swift in Sources */,
 				4A8914F02927AE8400A7466A /* NetworkResult.swift in Sources */,
 				4A43859928EFFAD300AB688F /* AuthCompleteViewController.swift in Sources */,
+				4A503E1D29288ECD009887CA /* MusicModel.swift in Sources */,
 				4A8914DB2927ABA600A7466A /* URLConstant.swift in Sources */,
 				4A43855C28EFF85700AB688F /* SceneDelegate.swift in Sources */,
 				4A4385A228EFFAF200AB688F /* LoginViewController.swift in Sources */,
 				4A8914EE2927ACA300A7466A /* SignupService.swift in Sources */,
 				4A20CD6128F7D92A00947272 /* UIViewController+.swift in Sources */,
 				4A8914DF2927ABC400A7466A /* MoyaLoggingPlugin.swift in Sources */,
+				4A503E2329288F16009887CA /* MusicGridViewController.swift in Sources */,
+				4A503E2129288F00009887CA /* MusicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
