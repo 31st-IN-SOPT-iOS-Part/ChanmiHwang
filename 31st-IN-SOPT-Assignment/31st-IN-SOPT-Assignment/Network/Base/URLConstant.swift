@@ -15,4 +15,6 @@ struct URLConstant {
     
     static let signupURL = "/v1/signup"
     static let loginURL = "/v1/login"
+    
+    static let musicListURL = "/music/list"
 }
