@@ -8,7 +8,7 @@
 import UIKit
 
 import SnapKit
-import SwiftyColor
+//import SwiftyColor
 import Then
 
 // MARK: - MusicGridViewController
@@ -16,6 +16,12 @@ import Then
 final class MusicGridViewController: UIViewController {
 
     // MARK: - UI Components
+    
+//    var musicListData = MusicListResponse(id: 0, albumImage: "", title: "", singer: "") {
+//        didSet {
+//            musicCollectionView.reloadData()
+//        }
+//    }
     
     private lazy var musicCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,19 +37,29 @@ final class MusicGridViewController: UIViewController {
         return collectionView
     }()
     
+    var musicList: [MusicListData] = []
+    
+//    private func getMusicList() {
+//        MusicListAPI.shared.getMusicList { [weak self] musicListResponse in
+//            guard let musicListData = musicListResponse else { return }
+//            self?.musicList = musicListData.data?.data ?? []
+//            self?.musicCollectionView.reloadData()
+//        }
+//    }
+    
     // MARK: - Variables
     
-    var musicList: [MusicModel] = [
-        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
-        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
-    ]
+//    var musicList: [MusicModel] = [
+//        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
+//        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
+//        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
+//        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
+//        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
+//        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
+//    ]
     
     // MARK: - Constants
     
@@ -59,6 +75,11 @@ final class MusicGridViewController: UIViewController {
         register()
         layout()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        getMusicList()
+//    }
 }
 
 // MARK: - Extensions
@@ -86,8 +107,16 @@ extension MusicGridViewController {
         )
     }
     
+//    private func musicListAPI() {
+//        MusicListAPI.shared.musicList() { musicListData in
+//            guard let musicListData = musicListData else { return }
+//            print("아니: \(self.musicListData)")
+//            self.musicCollectionView.reloadData()
+//        }
+//    }
+    
     private func calculateCellHeight() -> CGFloat {
-        let count = CGFloat(musicList.count)
+        let count = CGFloat(15)
         let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
         return heightCount * kCellHeight + (heightCount - 1) * kMusicLineSpacing + kMusicInset.top + kMusicInset.bottom
     }
@@ -126,7 +155,7 @@ extension MusicGridViewController: UICollectionViewDataSource {
         guard let musicCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MusicCollectionViewCell.identifier, for: indexPath)
                 as? MusicCollectionViewCell else { return UICollectionViewCell() }
-        musicCell.dataBind(model: musicList[indexPath.item])
+        musicCell.dataBind(model: musicList[indexPath.row])
         return musicCell
     }
 }

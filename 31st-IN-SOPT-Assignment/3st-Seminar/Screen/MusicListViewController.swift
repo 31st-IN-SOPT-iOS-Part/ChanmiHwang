@@ -8,7 +8,11 @@
 import UIKit
 
 import SnapKit
-import SwiftyColor
+import Moya
+import RxSwift
+import RxCocoa
+
+//import SwiftyColor
 
 // MARK: - MusicListViewController
 
@@ -27,19 +31,31 @@ final class MusicListViewController: UIViewController {
         return tableView
     }()
     
+    var musicList: [MusicListData] = []
+    
+    private func getMusicList() {
+        MusicListAPI.shared.getMusicList { [weak self] musicListResponse, err in
+            print(musicListResponse)
+            guard let musicListData = musicListResponse else { return }
+            self?.musicList = musicListData.data ?? []
+            self?.musicTableView.reloadData()
+        }
+    }
+    
+    
     // MARK: - Variables
     
-    var musicList: [MusicModel] = [
-        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
-        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
-    ]
+//    var musicList: [MusicModel] = [
+//        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
+//        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
+//        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
+//        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
+//        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
+//        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
+//        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
+//    ]
     
     // MARK: - Life Cycles
     override func viewDidLoad() {
@@ -47,7 +63,13 @@ final class MusicListViewController: UIViewController {
         register()
         layout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getMusicList()
+    }
 }
+    
 
 // MARK: - Extensions
 
@@ -61,7 +83,7 @@ extension MusicListViewController {
         musicTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
-            $0.height.equalTo(70 * musicList.count)
+            $0.height.equalTo(1000)
         }
     }
     
@@ -93,8 +115,7 @@ extension MusicListViewController: UITableViewDataSource {
         guard let musicCell = tableView.dequeueReusableCell(
             withIdentifier: MusicTableViewCell.identifier, for: indexPath)
                 as? MusicTableViewCell else { return UITableViewCell() }
-        
-        musicCell.dataBind(model: musicList[indexPath.row])
+        musicCell.dataBind(model: self.musicList[indexPath.row])
         return musicCell
     }
 
