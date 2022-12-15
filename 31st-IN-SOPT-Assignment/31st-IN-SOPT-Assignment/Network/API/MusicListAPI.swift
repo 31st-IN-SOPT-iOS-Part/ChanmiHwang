@@ -15,21 +15,21 @@ final class MusicListAPI {
     
     public private(set) var musicListData: GeneralArrayResponse<MusicListData>?
     
-    func getMusicList(completion: @escaping ((GeneralArrayResponse<MusicListData>?, Error?) -> ())) {
+    func getMusicList(completion: @escaping ((GeneralArrayResponse<MusicListData>?) -> ())) {
         musicListProvider.request(.musicList) { [weak self] response in
             switch response {
             case .success(let result):
                 do {
                     self?.musicListData = try result.map(GeneralArrayResponse<MusicListData>?.self)
                     guard let musicListData = self?.musicListData else { return }
-                    completion(musicListData, nil)
+                    completion(musicListData)
                 } catch(let err) {
                     print(err.localizedDescription)
-                    completion(nil, err)
+                    completion(nil)
                 }
             case .failure(let err):
                 print(err.localizedDescription)
-                completion(nil, err)
+                completion(nil)
             }
         }
     }

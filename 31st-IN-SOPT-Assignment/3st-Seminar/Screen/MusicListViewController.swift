@@ -34,8 +34,7 @@ final class MusicListViewController: UIViewController {
     var musicList: [MusicListData] = []
     
     private func getMusicList() {
-        MusicListAPI.shared.getMusicList { [weak self] musicListResponse, err in
-            print(musicListResponse)
+        MusicListAPI.shared.getMusicList { [weak self] musicListResponse in
             guard let musicListData = musicListResponse else { return }
             self?.musicList = musicListData.data ?? []
             self?.musicTableView.reloadData()
