@@ -52,8 +52,8 @@ final class LoginViewController: UIViewController {
                 guard let self = self else { return }
                 let authCompleteVC = AuthCompleteViewController()
                 authCompleteVC.modalPresentationStyle = .fullScreen
-
-                authCompleteVC.setData(string: self.loginView.emailTextField.text ?? "")
+                self.login()
+//                authCompleteVC.setData(string: self.loginView.emailTextField.text ?? "")
                 self.present(authCompleteVC, animated: true)
             })
             .disposed(by: disposeBag)
@@ -72,6 +72,17 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Custom Method
+    
+    private func login() {
+        guard let email = loginView.emailTextField.text else { return }
+        guard let password = loginView.passwordTextField.text else { return }
+        
+        LoginAPI.shared.login(param: LoginRequest(
+            emailOrContact: email,
+            password: password)) { response, err in
+                print(response)
+            }
+    }
     
     private func setBackgroundColor() {
         view.backgroundColor = .white
